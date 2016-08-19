@@ -1,4 +1,5 @@
 import React from 'react'
+import ContactChatWindow from './ChatWindow'
 	var divStyle = {
     float: "left",
     position: "fixed",
@@ -12,7 +13,7 @@ import React from 'react'
 export default class ContactsWindow extends React.Component {
 	render(){
 		return (
-			<div style={divStyle} >{this.props.contactList.names.map((name,index) => <li key={index}>{name}</li>)}</div>
+			<div style={divStyle} >{this.props.contactList.names.map((name,index) => <ContactChatWindow key={index} name={name} openChatWindow={this.props.openChatWindow}></ContactChatWindow>)}</div>
 		);
 	}
 }
